@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>⚙️ Control Panel</title>
 
     <style>
-        body{
+        body {
             background-color: #696969;
             display: flex;
             justify-content: center;
             text-align: center;
             flex-direction: column;
         }
-        .main{
+
+        .main {
             background-color: #8A8A8A;
             display: flex;
             padding: 1em;
@@ -22,23 +24,28 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 1em;
+            align-items: stretch;
         }
-        h2{
+
+        h2 {
             color: #f09797;
             text-shadow: 2px 2px 4px #000000;
             font: bolder 1.5em Arial, sans-serif;
         }
-        p{
+
+        p {
             color: #FFFFFF;
             font: 1em Arial, sans-serif;
             text-shadow: 2px 2px 4px #000000;
         }
-        h1{
+
+        h1 {
             color: #FFFFFF;
             text-shadow: 2px 2px 4px #000000;
             font: bolder 2.5em Arial, sans-serif;
         }
-        .default{
+
+        .default {
             display: flex;
             flex-direction: column;
             gap: 1em;
@@ -46,12 +53,70 @@
             background-color: #696969;
             border-radius: 1em;
         }
+
+        input[type="submit"] {
+            background-color: #5cf05c;
+            border: none;
+            padding: 0.5em;
+            border-radius: 0.5em;
+            font: bolder 1em Arial, sans-serif;
+            cursor: pointer;
+            margin-top: auto;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #30e930;
+            cursor: pointer;
+            translate: -2px -2px;
+            box-shadow: #147014 2px 2px 4px;
+        }
+
+        input[type="color"] {
+            border: none;
+            border-radius: 0.3em;
+            background-color: #a8a6a6;
+        }
+
+        input[type="time"] {
+            border: none;
+            border-radius: 0.3em;
+            background-color: #a8a6a6;
+        }
+
+        label {
+            color: white;
+            text-shadow: #003cff 2px 2px 4px;
+            font: 1.1em Arial, sans-serif;
+        }
+        h3 {
+                    color: #ace5fc;
+                    text-shadow: 2px 2px 4px #000000;
+                    font: bolder 1.5em Arial, sans-serif;
+                    margin-top: 0px;
+                    margin-bottom: 10px;
+                }
+        /* specific rainbow headings: remove the generic h3 shadow and keep gradient fill */
+        #rainbow {
+            margin-top: 0px;
+            margin-bottom: 10px;
+            font-family: sans-serif;
+            font-size: 2em;
+            /* cancel the generic h3 text-shadow */
+            text-shadow: none;
+            /* gradient fill */
+            background: linear-gradient(to right, #ef5350, #f48fb1,  #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
     </style>
 </head>
+
 <body>
-        <h1>Bienvenue sur le panel de control</h1>
+    <h1>Bienvenue sur le panel de control</h1>
     <div class="main">
-        <form class="scheduler default">
+        <form class="scheduler default" method="get" action="/set_scheduler">
             <div>
                 <label for="start">heure d'allumage</label>
                 <input type="time" name="start" id="start">
@@ -60,17 +125,36 @@
                 <label for="end">heure d'extinction</label>
                 <input type="time" name="end" id="end">
             </div>
-            
+
             <input type="submit" value="Changer les horaires">
 
         </form>
-        <form class="color_picker default">
+        <form class="color_picker default" method="get" action="/set_color">
             <div>
                 <label for="color">Choisir une couleur</label>
                 <input type="color" name="color" id="color" value="#ff0000">
             </div>
             <input type="submit" value="Changer la couleur">
         </form>
+        <form class="effect default" method="get" action="/effect_rainbow">
+            <h3 id="rainbow">Arc en ciel</h3>
+            <input type="submit" value="appliquer l'effet">
+            
+        </form>
+         <form class="effect default" method="get" action="/effect_snow">
+            <h3>Neige</h3>
+            <input type="submit" value="appliquer l'effet">
+            
+        </form> <form class="effect default" method="get" action="/effect_disco">
+            <h3>Disco</h3>
+            <input type="submit" value="appliquer l'effet">
+            
+        </form> <form class="effect default" method="get" action="/effect_cicle">
+            <h3>Cicle</h3>
+            <input type="submit" value="appliquer l'effet">
+            
+        </form>
     </div>
 </body>
+
 </html>
