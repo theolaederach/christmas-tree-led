@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚙️ Control Panel</title>
+
+    <style>
+        body{
+            background-color: #696969;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+        }
+        .main{
+            background-color: #8A8A8A;
+            display: flex;
+            padding: 1em;
+            align-items: center;
+            border-radius: 2em;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1em;
+        }
+        h2{
+            color: #f09797;
+            text-shadow: 2px 2px 4px #000000;
+            font: bolder 1.5em Arial, sans-serif;
+        }
+        p{
+            color: #FFFFFF;
+            font: 1em Arial, sans-serif;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        h1{
+            color: #FFFFFF;
+            text-shadow: 2px 2px 4px #000000;
+            font: bolder 2.5em Arial, sans-serif;
+        }
+        .default{
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            padding: 1em;
+            background-color: #696969;
+            border-radius: 1em;
+        }
+    </style>
+</head>
+<body>
+        <h1>Bienvenue sur le panel de control</h1>
+    <div class="main">
+        <form class="scheduler default">
+            <div>
+                <label for="start">heure d'allumage</label>
+                <input type="time" name="start" id="start">
+            </div>
+            <div>
+                <label for="end">heure d'extinction</label>
+                <input type="time" name="end" id="end">
+            </div>
+            
+            <input type="submit" value="Changer les horaires">
+
+        </form>
+        <form class="color_picker default">
+            <div>
+                <label for="color">Choisir une couleur</label>
+                <input type="color" name="color" id="color" value="#ff0000">
+            </div>
+            <input type="submit" value="Changer la couleur">
+        </form>
+    </div>
+</body>
+</html>
