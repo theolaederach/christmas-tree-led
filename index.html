@@ -118,6 +118,10 @@
     <div class="main">
         <form class="scheduler default" method="get" action="/set_scheduler">
             <div>
+                <label for="now">heure actuel</label>
+                <input type="time" name="now" id="now">
+            </div>
+            <div>
                 <label for="start">heure d'allumage</label>
                 <input type="time" name="start" id="start">
             </div>
@@ -152,7 +156,10 @@
         </form> <form class="effect default" method="get" action="/effect_cicle">
             <h3>Cicle</h3>
             <input type="submit" value="appliquer l'effet">
-            
+        </form>
+        </form> <form class="effect default" method="get" action="/effect_sparkling">
+            <h3>Éteincelant</h3>
+            <input type="submit" value="appliquer l'effet">
         </form>
     </div>
 </body>
