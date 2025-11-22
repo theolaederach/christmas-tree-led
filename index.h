@@ -1,5 +1,6 @@
+const char* HTML_CODE = R"rawliteral(
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -25,6 +26,19 @@
             justify-content: center;
             gap: 1em;
             align-items: stretch;
+        }
+
+        .OnOff input[type="submit"] {
+            background-color: #548bf0;
+        }
+        .OnOff input[type="submit"]:hover {
+            background-color: #3690f8;
+            cursor: pointer;
+            translate: -2px -2px;
+            box-shadow: #2d5db8 2px 2px 4px;
+        }
+        .OnOff h3 {
+            color: #acfcb3;
         }
 
         h2 {
@@ -114,54 +128,63 @@
 </head>
 
 <body>
-    <h1>Bienvenue sur le panel de control</h1>
+    <h1>Welcome on the control panel</h1>
     <div class="main">
-        <form class="scheduler default" method="get" action="/set_scheduler">
+        <form class="OnOff default" method="get" action="/OnOff">
+            <h3>Turn on / Off</h3>
+            <input type="submit" value="On / Off">
+        </form>
+        <form class="scheduler default" method="get" action="/Set_scheduler">
             <div>
-                <label for="now">heure actuel</label>
+                <label for="now">Current time</label>
                 <input type="time" name="now" id="now">
             </div>
             <div>
-                <label for="start">heure d'allumage</label>
+                <label for="start">Start time</label>
                 <input type="time" name="start" id="start">
             </div>
             <div>
-                <label for="end">heure d'extinction</label>
+                <label for="end">End time</label>
                 <input type="time" name="end" id="end">
             </div>
 
-            <input type="submit" value="Changer les horaires">
-
+            <input type="submit" value="Change schedule">
         </form>
-        <form class="color_picker default" method="get" action="/set_color">
+        <form class="color_picker default" method="get" action="/Set_color">
             <div>
-                <label for="color">Choisir une couleur</label>
+                <label for="color">Choose a color</label>
                 <input type="color" name="color" id="color" value="#ff0000">
             </div>
-            <input type="submit" value="Changer la couleur">
+            <input type="submit" value="Change color">
         </form>
-        <form class="effect default" method="get" action="/effect_rainbow">
-            <h3 id="rainbow">Arc en ciel</h3>
-            <input type="submit" value="appliquer l'effet">
+        <form class="effect default" method="get" action="/Effect_rainbow">
+            <h3 id="rainbow">Rainbow</h3>
+            <input type="submit" value="Apply effect">
             
         </form>
-         <form class="effect default" method="get" action="/effect_snow">
-            <h3>Neige</h3>
-            <input type="submit" value="appliquer l'effet">
+         <form class="effect default" method="get" action="/Effect_snow">
+            <h3>Snow</h3>
+            <input type="submit" value="Apply effect">
             
-        </form> <form class="effect default" method="get" action="/effect_disco">
+        </form> <form class="effect default" method="get" action="/Effect_disco">
             <h3>Disco</h3>
-            <input type="submit" value="appliquer l'effet">
+            <input type="submit" value="Apply effect">
             
-        </form> <form class="effect default" method="get" action="/effect_cicle">
+        </form> <form class="effect default" method="get" action="/Effect_cicle">
             <h3>Cicle</h3>
-            <input type="submit" value="appliquer l'effet">
+            <input type="submit" value="Apply effect">
         </form>
-        </form> <form class="effect default" method="get" action="/effect_sparkling">
-            <h3>Éteincelant</h3>
-            <input type="submit" value="appliquer l'effet">
+        </form>
+        <form class="effect default" method="get" action="/Effect_sparkling">
+            <h3>Sparkling</h3>
+            <input type="submit" value="Apply effect">
+        </form>
+        <form class="effect default" method="get" action="/Effect_mixed">
+            <h3>Mixed</h3>
+            <input type="submit" value="Apply effect">
         </form>
     </div>
 </body>
 
 </html>
+)rawliteral";

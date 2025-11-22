@@ -1,3 +1,4 @@
+const char* LOGIN_HTML = R"rawliteral(
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -83,3 +84,4 @@
     </form>
 </body>
 </html>
+)rawliteral";
