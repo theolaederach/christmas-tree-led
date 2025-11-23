@@ -49,9 +49,6 @@ void handleEffect_mixed();
 void handleSet_scheduler();
 void handleLogin();
 void handleNotFound();
-void saveState();
-void loadState();
-
 
 CRGB colorDisco1 = CRGB::Purple;
 CRGB colorDisco2 = CRGB::Cyan;
@@ -105,7 +102,8 @@ void setup() {
 
 void loop() {
     server.handleClient();
-    loadState();
+    // loadState();    // <-- remove this
+    loadWhitelist();   // <-- use the implemented function
 
     if (on) {
       if (effect == 0) { // Static
