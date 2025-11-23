@@ -1,4 +1,4 @@
-const char* HTML_CODE = R"rawliteral(
+const char* index_html = R"rawliteral(
 <!DOCTYPE html>
 <html lang="en">
 
@@ -150,36 +150,36 @@ const char* HTML_CODE = R"rawliteral(
 
             <input type="submit" value="Change schedule">
         </form>
-        <form class="color_picker default" method="get" action="/Set_color">
+        <form class="color_picker default" method="get" action="/Set_color"> <!-- effect 0 -->  
             <div>
                 <label for="color">Choose a color</label>
                 <input type="color" name="color" id="color" value="#ff0000">
             </div>
             <input type="submit" value="Change color">
         </form>
-        <form class="effect default" method="get" action="/Effect_rainbow">
+        <form class="effect default" method="get" action="/setEffect/rainbow"> <!-- effect 1 -->  
             <h3 id="rainbow">Rainbow</h3>
             <input type="submit" value="Apply effect">
             
         </form>
-         <form class="effect default" method="get" action="/Effect_snow">
+         <form class="effect default" method="get" action="/setEffect/snow"> <!-- effect 2 -->  
             <h3>Snow</h3>
             <input type="submit" value="Apply effect">
             
-        </form> <form class="effect default" method="get" action="/Effect_disco">
+        </form> <form class="effect default" method="get" action="/setEffect/disco"> <!-- effect 3 -->  
             <h3>Disco</h3>
             <input type="submit" value="Apply effect">
             
-        </form> <form class="effect default" method="get" action="/Effect_cicle">
+        </form> <form class="effect default" method="get" action="/setEffect/cicle"> <!-- effect 4 -->  
             <h3>Cicle</h3>
             <input type="submit" value="Apply effect">
         </form>
         </form>
-        <form class="effect default" method="get" action="/Effect_sparkling">
+        <form class="effect default" method="get" action="/setEffect/sparkling"> <!-- effect 5 -->  
             <h3>Sparkling</h3>
             <input type="submit" value="Apply effect">
         </form>
-        <form class="effect default" method="get" action="/Effect_mixed">
+        <form class="effect default" method="get" action="/setEffect/mixed"> <!-- effect 6§ -->  
             <h3>Mixed</h3>
             <input type="submit" value="Apply effect">
         </form>
