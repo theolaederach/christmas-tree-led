@@ -28,6 +28,9 @@ Before uploading, you must change the following variables at the top of the `chr
 ``` C++
 #define LED_PIN     6       // The ESP32 pin connected to your LED strip's Data-In
 #define NUM_LEDS    150     // The total number of LEDs on your strip
+
+const char* ssid = "LED_CONTROL";           //the SSID of the access point
+const char* password = "Pa$$w0rd";          //the password of the access point
 ```
 #### 3. Upload
 1. Make sure you have the FastLED library installed in your Arduino IDE.
