@@ -1,38 +1,51 @@
+# ESP32 NeoPixel Christmas Tree
 
-# Christmas tree guarland with an esp32 and neopixel
+This project uses an ESP32 to control a NeoPixel (WS2812B) LED strip for your Christmas tree.
 
-Hello, i made a code for an esp32 to configure your guarland for your Christmas tree.
+It works by creating its own Wi-Fi Access Point (AP). You connect your phone or computer directly to the ESP32's Wi-Fi, and then use a web interface to control the lights.
 
-It use an web interface connected to your wifi for configure the led. you just have to scan your wifi and connect with the ip to the web site.
+## 🎄 Features
 
-## Installation
+* Turn LEDs On/Off
+* Static Color Picker
+* Multiple Effects (Rainbow, Disco, Cicle, Sparkling, and a "Mixed" sequence)
+* Brightness Control
+* Manual Time-Based Scheduler (Set a "current time", "start time", and "end time")
 
-Clone the project on your computer :
+## 🚀 Getting Started
 
-```bash
-  git clone https://github.com/theolaederach/christmas-tree-led.git
+### 1. Installation
+
+Clone the project to your computer:
+``` bash
+git clone [https://github.com/theolaederach/christmas-tree-led.git](https://github.com/theolaederach/christmas-tree-led.git)
 ```
-Before uploading the code into the esp32, change the variable below.
+Open the `christmas-tree-led.ino`file in your Arduino IDE.
 
-After the uploading, you can see the ip adress on the serial monitor or you can scan your wifi with an app like [Fing](https://www.fing.com/)
+### 2. Configuration
 
+Before uploading, you must change the following variables at the top of the `christmas-tree-led.ino` file to match your hardware:
+``` C++
+#define LED_PIN     6       // The ESP32 pin connected to your LED strip's Data-In
+#define NUM_LEDS    150     // The total number of LEDs on your strip
+```
+#### 3. Upload
+1. Make sure you have the FastLED library installed in your Arduino IDE.
 
-## Environment Variables
+2. Select your ESP32 board (e.g., "ESP32C3 Dev Module").
 
-You need to change this variables to connect the esp to your wi-fi.
+3. Upload the code to your ESP32.
 
+## 💡 How to Use
+1. After the ESP32 has booted, open the Wi-Fi settings on your phone or computer.
 
-### Into the file `Christmas-tree-led.ino`
+2. Scan for new networks and connect to the one named "LED_CONTROL".
 
-10 : `#define LED_PIN 6` change the 6 by your led pin.
+3. Use the password "mot2passe" to connect.
 
-11 : `#define NUM_LED` change by the number of led you have.
+4. Once connected, open a web browser and go to the following address: [http://192.168.4.1](http://192.168.4.1)
 
-13 :`const char* ssid = "your_wifi_name";` change by the ssid of your wifi / the name.
+You should now see the web interface and can start controlling your Christmas tree lights!
 
-14 : `const char* password = "Password";` change by the password of your wifi.
-
-## Authors
-
-- [@theolaederach](https://www.github.com/theolaederach)
-
+## 🧑‍💻 Author
+[@theolaederach](https://github.com/theolaederach/)

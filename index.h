@@ -66,6 +66,7 @@ const char* index_html = R"rawliteral(
             padding: 1em;
             background-color: #696969;
             border-radius: 1em;
+            max-width: 15em;
         }
 
         input[type="submit"] {
@@ -96,7 +97,14 @@ const char* index_html = R"rawliteral(
             border-radius: 0.3em;
             background-color: #a8a6a6;
         }
-
+        input[type="range"] {
+            width: 90%;
+        }
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: #5cf05c;
+        }
         label {
             color: white;
             text-shadow: #003cff 2px 2px 4px;
@@ -130,11 +138,15 @@ const char* index_html = R"rawliteral(
 <body>
     <h1>Welcome on the control panel</h1>
     <div class="main">
-        <form class="OnOff default" method="get" action="/OnOff">
+        <form class="OnOff default" method="get" action="/onoff">
             <h3>Turn on / Off</h3>
             <input type="submit" value="On / Off">
         </form>
-        <form class="scheduler default" method="get" action="/Set_scheduler">
+        <form class="scheduler default" method="get" action="/SetScheduler">
+            <div>
+                <label for="enable">enable / disable scheduler</label>
+                <input type="checkbox" name="enable" id="enable">
+            </div>
             <div>
                 <label for="now">Current time</label>
                 <input type="time" name="now" id="now">
@@ -150,12 +162,20 @@ const char* index_html = R"rawliteral(
 
             <input type="submit" value="Change schedule">
         </form>
-        <form class="color_picker default" method="get" action="/Set_color"> <!-- effect 0 -->  
+        <form class="color_picker default" method="get" action="/Setcolor"> <!-- effect 0 -->  
             <div>
                 <label for="color">Choose a color</label>
                 <input type="color" name="color" id="color" value="#ff0000">
             </div>
             <input type="submit" value="Change color">
+        </form>
+        <form class="bright default" method="get" action="/Setbright"> 
+            <div>
+                <label for="brightness">Choose the brightness</label>
+                <input type="range" name="brightness" id="brightness" min="0" max="100" value="100">
+                
+            </div>
+            <input type="submit" value="Change brightness">
         </form>
         <form class="effect default" method="get" action="/setEffect/rainbow"> <!-- effect 1 -->  
             <h3 id="rainbow">Rainbow</h3>
