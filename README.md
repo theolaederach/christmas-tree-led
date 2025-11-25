@@ -18,7 +18,7 @@ It works by creating its own Wi-Fi Access Point (AP). You connect your phone or 
 
 Clone the project to your computer:
 ``` bash
-git clone [https://github.com/theolaederach/christmas-tree-led.git](https://github.com/theolaederach/christmas-tree-led.git)
+git clone https://github.com/theolaederach/christmas-tree-led.git
 ```
 Open the `christmas-tree-led.ino`file in your Arduino IDE.
 
